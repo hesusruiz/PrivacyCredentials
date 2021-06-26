@@ -1,0 +1,35 @@
+site_name: PrivacyCredentials
+site_url: https://example.com/
+
+theme:
+  name: material
+  palette:
+    scheme: normal
+    primary: indigo
+    accent: indigo
+  logo: assets/logo.png
+
+  features:
+    - header.autohide
+    - navigation.tabs
+    - navigation.sections
+
+repo_url: https://github.com/hesusruiz/PrivacyCredentials
+
+
+markdown_extensions:
+  - def_list
+  - pymdownx.highlight
+  - pymdownx.superfences
+
+plugins:
+  - search
+  - img2fig
+  - kroki:
+
+
+
+nav:
+    - Home: 'index.md'
+    - DID Methods: 'didmethods.md'
+    - Credentials: 'portablecredentials.md'
