@@ -1,0 +1,728 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://example.com/architecture/ar-overview/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Overview - PrivacyCredentials</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
+      
+    
+    
+    
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="normal" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#overview-of-the-system" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="PrivacyCredentials" class="md-header__button md-logo" aria-label="PrivacyCredentials" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PrivacyCredentials
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Overview
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/hesusruiz/PrivacyCredentials/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="PrivacyCredentials" class="md-nav__button md-logo" aria-label="PrivacyCredentials" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    PrivacyCredentials
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/hesusruiz/PrivacyCredentials/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+      
+      <label class="md-nav__link" for="__nav_1">
+        Home
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Home" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Home
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_2" type="checkbox" id="__nav_1_2" checked>
+      
+      <label class="md-nav__link" for="__nav_1_2">
+        Architecture
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Architecture" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          Architecture
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Overview
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Overview
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-three-zones-for-personal-data" class="md-nav__link">
+    The three zones for personal data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-flow-of-a-certificate" class="md-nav__link">
+    The flow of a certificate
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replicating-the-privacy-features-of-the-physical-world" class="md-nav__link">
+    Replicating the privacy features of the physical world
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#obtaining-the-public-keys-for-local-verification-in-the-mobile" class="md-nav__link">
+    Obtaining the public keys for local verification in the mobile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-verification-in-a-server" class="md-nav__link">
+    Optional: verification in a server
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" type="checkbox" id="__nav_1_3" >
+      
+      <label class="md-nav__link" for="__nav_1_3">
+        DID Methods
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="DID Methods" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          DID Methods
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../didmethods/elsi/" class="md-nav__link">
+        ELSI
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" >
+      
+      <label class="md-nav__link" for="__nav_1_4">
+        Credentials
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Credentials" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          Credentials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../credentials/eu-covid/" class="md-nav__link">
+        EU COVID
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../credentials/w3c/" class="md-nav__link">
+        W3C VC
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5" type="checkbox" id="__nav_1_5" >
+      
+      <label class="md-nav__link" for="__nav_1_5">
+        Trust Framework
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Trust Framework" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_5">
+          <span class="md-nav__icon md-icon"></span>
+          Trust Framework
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trustframework/tf-overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trustframework/smart-contracts/" class="md-nav__link">
+        Smart Contracts
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-three-zones-for-personal-data" class="md-nav__link">
+    The three zones for personal data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-flow-of-a-certificate" class="md-nav__link">
+    The flow of a certificate
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replicating-the-privacy-features-of-the-physical-world" class="md-nav__link">
+    Replicating the privacy features of the physical world
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#obtaining-the-public-keys-for-local-verification-in-the-mobile" class="md-nav__link">
+    Obtaining the public keys for local verification in the mobile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-verification-in-a-server" class="md-nav__link">
+    Optional: verification in a server
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/hesusruiz/PrivacyCredentials/edit/master/docs/architecture/ar-overview.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="overview-of-the-system">Overview of the system</h1>
+<p>This section provides an overview of the system. The description is focused especially on the privacy characterictics of the system, given that it is the most important property. </p>
+<h2 id="the-three-zones-for-personal-data">The three zones for personal data</h2>
+<p>To facilitate reasoning about tecnology and personal data, the system can be divided into three relevant zones.</p>
+<figure class="figure-image">
+  <img src="Slide5.PNG" alt="The three zones for personal data">
+  <figcaption>The three zones for personal data</figcaption>
+</figure>
+
+<p>At the top we have the <code>citizen's zone</code>, represented in green.
+In the intermediate level we have the <code>entities zone</code>, with the businesses and organistions that manage or process personal data from the citizens, and represented in yellow.
+At the bottom we have the <code>blockchain zone</code>. It is red because the fundamental rule for any blockchain application is that personal data never has to be written to the blockchain, even if it is encrypted (encrypted personal data is considered personal data if it is exposed publicly for a sufficiently long period).</p>
+<p>We could start discussing about what can be considered personal data, and if a hash of personal data is considered personal data or not. But this is irrelevant here because in this system no personal data is ever written to the blockchain, including any type of hash from personal data.</p>
+<p>The information stored in the blockchain is the identities of the juridical persons involved, including the public key that will be used to verify the signatures from the entities issuing certificates.
+The blockchain stores the Trusted List of en
+that the entities issuing certificates 
+Lo que se graba en el Blockchain (que en este caso es la Red T de los socios de Alastria), son las identidades de las personas jurídicas que intervienen, que incluye la clave pública que las entidades emisoras de certificados usarán para firmar digitalmente los certificados en formato Credencial Digital COVID EU. Porque el sistema utiliza el mismo formato de datos, pero lo mejora y simplifica gracias al uso de una red Blockchain.
+Es decir, en el Blockchain se almacena y gestiona la Lista de Entidades Confiables que son las únicas autorizadas a emitir certificados.</p>
+<h2 id="the-flow-of-a-certificate">The flow of a certificate</h2>
+<p>The following figure describes the basic flow of a certificate:</p>
+<figure class="figure-image">
+  <img src="Slide6.PNG" alt="The flow of  certificate">
+  <figcaption>The flow of  certificate</figcaption>
+</figure>
+
+<p>The authorised issuer entity creates and digitally signs the certificate, and sends it to the citizen via several mechanisms. The personal data flows are marked in red.</p>
+<p>The relationship between the citizen and the issuer entity is subject to current regulation (e.g., GDPR) and the existence of the blockchain does not change anything.
+The diagram presents also the possibility that the entity stores some personal data in its own data base, always within the framework of the same personal data regulation.</p>
+<p>The critical feature is that there is not any write operation to the blockchain during the issuance process.</p>
+<p>The certificate is sent from the citizen to the verifier by means of a QR code which is implemented in such a way that there is no need for any intermediate server. Transmission is purely P2P in the safe <code>citizen's zone</code> without involvement of any entity, of course not even the issuer of the certificate.</p>
+<h2 id="replicating-the-privacy-features-of-the-physical-world">Replicating the privacy features of the physical world</h2>
+<p>The privacy features of the system can be better understood by making an analogy with the real world: The citizen is holding a wallet and a set of cards inside.</p>
+<figure class="figure-image">
+  <img src="Slide7.PNG" alt="Comparison with a physical wallet">
+  <figcaption>Comparison with a physical wallet</figcaption>
+</figure>
+
+<p>This is represented in the figure above and the following properties hold:</p>
+<ul>
+<li>
+<p>The citizen can use whatever wallet she wishes, because the wallet follows a set of standards. In the physical world, all wallets are interchangeable as far as they can hold standard-size cards.</p>
+</li>
+<li>
+<p>The citizen can use more than one wallet, either in parallel or sequentially. In the physical world, she can easily move the cards from one wallet to another, depending on the situation (e.g., she goes to the beach and moves a subset of the cards to a special wallet for a specific period of time).</p>
+</li>
+<li>
+<p>In order to obtain a wallet, the citizen does not need to register in any system or provide any personal data to any entity. In the analogy with the physical world, the citizen can go to a shop and pay for a wallet she likes in complete anonymity with respect to the wallet seller. There may be wallets for free (e.g., as gifts from entities), or if the customer so wishes, <code>fancy</code> wallets that the citizen has to pay.</p>
+</li>
+<li>
+<p>The above does not preclude the existence of wallets that require registration from citizens (and so requiring personal data). In the physical world, this may be analogous to obtaining a wallet because the citizen belongs to a club or is employed in a company, or as a gift because the citizen is the customer of a company.</p>
+</li>
+<li>
+<p>Once the citizen uses the wallet, the wallet does not send any personal information to the provider of the wallet. In the physical world, once the citizen has received the wallet, the seller of the wallet has no idea of what is the actual usage of the wallet by the citizen.</p>
+</li>
+<li>
+<p>However the digital wallet may communicate with the wallet provider to obtain patches or upgrades, especially security fixes. In the physical world this would be analogous to the citizen going to the shop for some repairs on her wallet.</p>
+</li>
+</ul>
+<h2 id="obtaining-the-public-keys-for-local-verification-in-the-mobile">Obtaining the public keys for local verification in the mobile</h2>
+<p>We now complete the flow of information in the system for the basic credential issuance and verification process.</p>
+<p>In order to be able to perform local verification of credentials in the mobile, we need the public keys of issuers. This is represented in the following figure, where the arrows are green because the information is public and in addition they are queries, never writes.</p>
+<p>There may be two main scenarios: one where the verifier is an individual citizen and the second when the verifier is an employee acting on behalf of a company that wants to verify certificates as part of its business process (e.g., a hotel on check-in of guests). We discuss here the first scenario, and the second will be discussed in the next section.</p>
+<figure class="figure-image">
+  <img src="Slide8.PNG" alt="Public keys and local verification">
+  <figcaption>Public keys and local verification</figcaption>
+</figure>
+
+<p>In this scenario there are two citizens involved: the one holding the credential and the one acting as verifier.</p>
+<p>The mobile of the citizen acting as verifier can not access directly the blockchain and requires an intermediate server, operated by some entity. Typically, that entity operates both a "traditional" server and a blockchain node that it can access without restriction.</p>
+<p>From the point of view of data privacy, the intermediate server can never have access to the personal data of the citizen presenting the credential to the verifier.</p>
+<p>For the verifier, the amount of harm that an untrusted entity can make is very low, but in any case it is important that verifiers use a trusted server or even better a pool of trusted servers.</p>
+<p>The server receives HTTP GET requests from the verifier mobile for retrieving the public keys. Even though this is not done on each verification (the verifier mobile has a cache which is updated periodically), those requests could be used to try to track the citizen acting as verifier, using techniques like for example <a href="https://en.wikipedia.org/wiki/Device_fingerprint">device fingerprinting</a>.</p>
+<p>It is expected that several trusted entities like public administrations, civil organisations or highly-regulated businesses operate intermediate servers that offer publicly the single API which is required for trusted verification by citizens. The service is just a query, very simple and can use aggressive caching techniques so it can scale massively.</p>
+<p>Having a pool of public trusted operators of this service improves the resiliency of the verifier against malicious attacks. The citizen acting as verifier can configure the application to build the cache of public keys from queries to several servers, detecting wrong keys and avoiding censorship of some keys or just availability problems in the servers.</p>
+<h2 id="optional-verification-in-a-server">Optional: verification in a server</h2>
+<p>In the case when the verifier is an employee acting on behalf of an entity and especially for very small businessess, the scheme described above can also be used. It may also be possible that an industry association provides one or more servers providing the service to its member entities, probably together with the "traditional" services that they may already be receiving from the industry association.</p>
+<p>The system also supports making the verification in a given server. This feature may be useful for bigger entities and in some scenarios where they want to apply sophisticated business rules to the verification process, or when they require the storage in their databases of the credential data.</p>
+<p>This is represented in the following diagram.</p>
+<figure class="figure-image">
+  <img src="Slide9.PNG" alt="Verification in a server">
+  <figcaption>Verification in a server</figcaption>
+</figure>
+
+<p>When making the validation in the server the verifier mobile has to send the certificate to the server, and this is represented by the new arrow in the diagram. The arrow is red because there is personal data involved. The entity receiving the personal data should comply with all applicable regulations.</p>
+<p>From the diagram it is easy to see that the existence of a blockchain network does not have any influence in how personal data should be handled by all actors involved.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../.." class="md-footer__link md-footer__link--prev" aria-label="Previous: Introduction" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Introduction
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../didmethods/elsi/" class="md-footer__link md-footer__link--next" aria-label="Next: ELSI" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              ELSI
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.sections"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>
