@@ -2,7 +2,7 @@
 
 The system supports several DID Methods, using the Universal Resolver to resolve each DID into a corresponding DID Document.
 
-However, the main DID method used for organisations and currently implemented in Alastria Red T is **ELSI**, where the identities of juridical persons are anchored into a Public-Permissioned blockchain.
+However, the main DID method used for organisations and currently implemented in Alastria Red-T is **ELSI**, where the identities of juridical persons are anchored into a Public-Permissioned blockchain.
 
 The name ELSI stands for **E**TSI **L**egal person **S**emantics **I**dentifier, because it is based on the _Legal person semantic identifier_ defined in the [European Norm ETSI EN 319 412-1](https://www.etsi.org/deliver/etsi_en/319400_319499/31941201/01.04.02_20/en_31941201v010402a.pdf), related to digital signatures, peer entity authentication, data authentication as well as data confidentiality.
 

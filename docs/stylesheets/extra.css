@@ -1,0 +1,71 @@
+/* :root>* {
+    --md-primary-fg-color:        #EE0F0F;
+    --md-primary-fg-color--light: #ECB7B7;
+    --md-primary-fg-color--dark:  #90030C;
+} */
+
+/* .md-typeset {
+    font-size: 2em;
+} */
+
+.md-typeset a {
+    font-weight: 600;
+}
+
+
+.md-typesetd table:not([class]) th {
+    background-color: rgba(68,138,255,.1);
+    color: black;
+    font-weight: 600;
+}
+
+.apidoc-getbox {
+    display: inline-block;
+    width: 100%;
+    background-color: rgba(68,138,255,.1);
+    color:white;
+    padding: .5em 1em;
+    border: 1px solid #61affe;
+    border-radius: 4px;
+    box-shadow: 0 0 3px rgb(0 0 0 / 19%);
+}
+
+.apidoc-get {
+    display: inline-block;
+    background-color: #61affe;
+    color:white;
+    font-weight: 700;
+    padding: .3em 2em;
+    border-radius: 4px;
+}
+
+
+.apidoc-postbox {
+    display: inline-block;
+    width: 100%;
+    background-color: rgba(73,204,144,.1);
+    color:white;
+    padding: .5em 1em;
+    border: 1px solid #49cc90;
+    border-radius: 4px;
+    box-shadow: 0 0 3px rgb(0 0 0 / 19%);
+}
+
+.apidoc-post {
+    display: inline-block;
+    background-color: #49cc90;
+    color:white;
+    font-weight: 700;
+    padding: .3em 2em;
+    border-radius: 4px;
+}
+
+.apidoc-url {
+    color: black;
+    font-weight: 600;
+    padding-left: 0.5em;
+}
+
+.apidoc-description {
+    padding-left: 10px;
+}

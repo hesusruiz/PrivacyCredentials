@@ -8,10 +8,10 @@ theme:
     primary: indigo
     accent: indigo
   logo: assets/logo.png
+  font: false
 
   features:
     - header.autohide
-    - navigation.tabs
     - navigation.sections
 
 repo_url: https://github.com/hesusruiz/PrivacyCredentials
@@ -21,15 +21,29 @@ markdown_extensions:
   - def_list
   - pymdownx.highlight
   - pymdownx.superfences
+  - attr_list
+  - admonition
 
 plugins:
   - search
   - img2fig
+  - render_swagger
   - kroki:
 
+extra_css:
+  - stylesheets/extra.css
 
 
 nav:
-    - Home: 'index.md'
-    - DID Methods: 'didmethods.md'
-    - Credentials: 'portablecredentials.md'
+    - Home:
+      - Introduction: 'index.md'
+      - Architecture:
+        - Overview: architecture/ar-overview.md
+      - DID Methods:
+          - ELSI: 'didmethods/elsi.md'
+      - Credentials:
+          - EU COVID: 'credentials/eu-covid.md'
+          - W3C VC: 'credentials/w3c.md'
+      - Trust Framework:
+          - Overview: trustframework/tf-overview.md
+          - Smart Contracts: trustframework/smart-contracts.md
