@@ -2,37 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://example.com/</loc>
-         <lastmod>2021-06-27</lastmod>
+         <lastmod>2021-06-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/architecture/ar-overview/</loc>
-         <lastmod>2021-06-27</lastmod>
+         <lastmod>2021-06-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://example.com/architecture/relationship-with-eucovid/</loc>
+         <lastmod>2021-06-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/credentials/eu-covid/</loc>
-         <lastmod>2021-06-27</lastmod>
+         <lastmod>2021-06-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/credentials/w3c/</loc>
-         <lastmod>2021-06-27</lastmod>
+         <lastmod>2021-06-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/didmethods/elsi/</loc>
-         <lastmod>2021-06-27</lastmod>
+         <lastmod>2021-06-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/trustframework/smart-contracts/</loc>
-         <lastmod>2021-06-27</lastmod>
+         <lastmod>2021-06-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/trustframework/tf-overview/</loc>
-         <lastmod>2021-06-27</lastmod>
+         <lastmod>2021-06-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

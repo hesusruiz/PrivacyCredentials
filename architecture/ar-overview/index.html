@@ -325,10 +325,29 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#revocation-of-certificates" class="md-nav__link">
+    Revocation of certificates
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../relationship-with-eucovid/" class="md-nav__link">
+        Relationship with EU COVID
+      </a>
     </li>
   
 
@@ -347,7 +366,7 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" type="checkbox" id="__nav_1_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" data-md-state="indeterminate" type="checkbox" id="__nav_1_3" checked>
       
       <label class="md-nav__link" for="__nav_1_3">
         DID Methods
@@ -386,7 +405,7 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" data-md-state="indeterminate" type="checkbox" id="__nav_1_4" checked>
       
       <label class="md-nav__link" for="__nav_1_4">
         Credentials
@@ -437,7 +456,7 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5" type="checkbox" id="__nav_1_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5" data-md-state="indeterminate" type="checkbox" id="__nav_1_5" checked>
       
       <label class="md-nav__link" for="__nav_1_5">
         Trust Framework
@@ -546,6 +565,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#revocation-of-certificates" class="md-nav__link">
+    Revocation of certificates
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -575,12 +601,9 @@
 <p>At the top we have the <code>citizen's zone</code>, represented in green.
 In the intermediate level we have the <code>entities zone</code>, with the businesses and organistions that manage or process personal data from the citizens, and represented in yellow.
 At the bottom we have the <code>blockchain zone</code>. It is red because the fundamental rule for any blockchain application is that personal data never has to be written to the blockchain, even if it is encrypted (encrypted personal data is considered personal data if it is exposed publicly for a sufficiently long period).</p>
-<p>We could start discussing about what can be considered personal data, and if a hash of personal data is considered personal data or not. But this is irrelevant here because in this system no personal data is ever written to the blockchain, including any type of hash from personal data.</p>
-<p>The information stored in the blockchain is the identities of the juridical persons involved, including the public key that will be used to verify the signatures from the entities issuing certificates.
-The blockchain stores the Trusted List of en
-that the entities issuing certificates 
-Lo que se graba en el Blockchain (que en este caso es la Red T de los socios de Alastria), son las identidades de las personas jurídicas que intervienen, que incluye la clave pública que las entidades emisoras de certificados usarán para firmar digitalmente los certificados en formato Credencial Digital COVID EU. Porque el sistema utiliza el mismo formato de datos, pero lo mejora y simplifica gracias al uso de una red Blockchain.
-Es decir, en el Blockchain se almacena y gestiona la Lista de Entidades Confiables que son las únicas autorizadas a emitir certificados.</p>
+<p>There are many discussions about what can be considered personal data, and if a hash of personal data is considered personal data or not. But this is irrelevant here because in this system no personal data is ever written to the blockchain, including any type of hash from personal data.</p>
+<p>The blockchain is used to register the public information about the identities of the juridical persons involved, including the public key that will be used to verify the signatures from the entities issuing certificates.
+The blockchain stores a decentrally managed Trusted List of entities which are authorised to create and digitally sign certificates of a given type. The Trusted List can be organised by domains, geographical regios or any other criteria that may be adecuate to th euse cases. It is modelled similarly as the Internet DNS system.</p>
 <h2 id="the-flow-of-a-certificate">The flow of a certificate</h2>
 <p>The following figure describes the basic flow of a certificate:</p>
 <figure class="figure-image">
@@ -648,6 +671,13 @@ The diagram presents also the possibility that the entity stores some personal d
 
 <p>When making the validation in the server the verifier mobile has to send the certificate to the server, and this is represented by the new arrow in the diagram. The arrow is red because there is personal data involved. The entity receiving the personal data should comply with all applicable regulations.</p>
 <p>From the diagram it is easy to see that the existence of a blockchain network does not have any influence in how personal data should be handled by all actors involved.</p>
+<h2 id="revocation-of-certificates">Revocation of certificates</h2>
+<p>Revocation is normally a very rare event compared to the total number of credentials issued. Actually, in practice in the paper world it is very difficult to implement a real-time verification of paper credentials.</p>
+<p>In the digital world, revocation is typically implemented with revocation lists, which are checked in real-time by the verifier application. With centralised technology it is very difficult to implement real-time verification of credentials without leaking information to the server where the revocation list is stored.
+Typically, the revocation list is managed by the same entity that issued the credential, giving the opportunity to this entity to track usage at the individual level of the credentials that were issued, knowing where and when the credential is used.</p>
+<p>Managing the revocation list in the blockchain brings several benefits. When the revocation information is inserted in one of the nodes, it is replicated in all the nodes of the network and it is available for verification in all of them. That means that the verifier can securely check in its own node whithout leaking any verification information to any other entity, especifically the issuer of the certificate. In addition, the verifier entity can completely manage the availability of its own node (or nodes), without reliance on the availability of any server operated by a third party.</p>
+<p>However, a lot of care should be taken with the information of the certificate that is used in the revocation list, because that information will be permanent in the blockchain. If the revocation identifier is derived in some way from the personal information in the credential (e.g. hashes calculated using information in the credential), then there may be risks of reidentification in the long term, especially for credentials of a very small size and with a small number of fields.</p>
+<p>In the PrivacyCredentials system each credential has a <strong>U</strong>niversally <strong>U</strong>nique <strong>ID</strong>entifier version 4 (UUID) as defined in <a href="https://datatracker.ietf.org/doc/html/rfc4122#section-4.4">RFC 4122</a>. This UUID is completely urelated to the rest of the information in the credential and reduces the possibility of many typs of attacks.</p>
                 
               
               
@@ -683,13 +713,13 @@ The diagram presents also the possibility that the entity stores some personal d
       
       
         
-        <a href="../../didmethods/elsi/" class="md-footer__link md-footer__link--next" aria-label="Next: ELSI" rel="next">
+        <a href="../relationship-with-eucovid/" class="md-footer__link md-footer__link--next" aria-label="Next: Relationship with EU COVID" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              ELSI
+              Relationship with EU COVID
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -718,7 +748,7 @@ The diagram presents also the possibility that the entity stores some personal d
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.expand"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.76f349be.min.js"></script>
