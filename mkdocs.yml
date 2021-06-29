@@ -51,7 +51,7 @@ plugins:
       toc_depth: 6
       # Content-related
       add_full_urls: false
-      enumerate_headings: true
+      enumerate_headings: false
       enumerate_figures: true
       add_cover_page: true
       cover_page_template: ""
