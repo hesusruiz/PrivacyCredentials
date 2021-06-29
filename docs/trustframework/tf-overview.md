@@ -35,57 +35,59 @@ Some observations about this structure:
 
 A new identity can only be registered as a sub-node by an existing entity already registered in the system. The API used is **/api/did/v1/identifiers** and its definition is the following:
 
-<div class="apidoc-postbox">
-    <span class="apidoc-post">GET</span>
-    <span class="apidoc-url">/api/did/v1/identifiers</span>
-</div>
+!!! apidoc "Create an identity"
 
-Create an Identity anchored in the blockchain.
+    <div class="apidoc-postbox">
+        <span class="apidoc-post">GET</span>
+        <span class="apidoc-url">/api/did/v1/identifiers</span>
+    </div>
 
-**Request parameters**
+    Create an Identity anchored in the blockchain.
 
-The body of the request is a JSON object with the following fields
+    **Request parameters**
 
-| Name | Type | Description | Example |
-|------|------|-------------|---------|
-| **DID** | string | The DID to resolve into a DID Document | "did:elsi:VATES-B60645900" |
-| domain_name | string | Domain name to assign in the hierarchy | "in2.ala" |
-| website | string | Website of the entity | "www.in2.es" |
-| commercial_name | string | Commercial name | "IN2 Innovating 2gether" |
-| new_privatekey | PrivatekeyJWK | The private key of the new entity | |
-| parent_privatekey | PrivatekeyJWK | The private key of caller (in this case the owner of "ala") | |
+    The body of the request is a JSON object with the following fields
+
+    | Name | Type | Description | Example |
+    |------|------|-------------|---------|
+    | **DID** | string | The DID to resolve into a DID Document | "did:elsi:VATES-B60645900" |
+    | domain_name | string | Domain name to assign in the hierarchy | "in2.ala" |
+    | website | string | Website of the entity | "www.in2.es" |
+    | commercial_name | string | Commercial name | "IN2 Innovating 2gether" |
+    | new_privatekey | PrivatekeyJWK | The private key of the new entity | |
+    | parent_privatekey | PrivatekeyJWK | The private key of caller (in this case the owner of "ala") | |
 
 
-**Example request**:
+    **Example request**:
 
-```json
-{
-    "DID": "did:elsi:VATES-B60645900",
-    "domain_name": "in2.ala",
-    "website": "www.in2.es",
-    "commercial_name": "IN2 Innovating 2gether",
-    "new_privatekey": {
-        "kty": "EC",
-        "crv": "secp256k1",
-        "d": "Dqv3jmu8VNMKXWrHkppr5473sLMzWBczRhzdSdpxDfI",
-        "x": "FTiW0a4r7S2SwjL7AlFlN1yJNWF--4_x3XTTxkFbJ9o",
-        "y": "MmpxbQCOZ0L9U6rLLkD_U8LRGwYEHcoN-DPnEdlpt6A"
-    },
-    "parent_privatekey": {
-        "kty": "EC",
-        "crv": "secp256k1",
-        "d": "Dqv3jmu8VNMKXWrHkppr5473sLMzWBczRhzdSdpxDfI",
-        "x": "NKW_0Fs4iumEegzKoOH0Trwtje1sXsG9Z1949sA8Omo",
-        "y": "g4B3EI0qIdlcXTn-2RpUxgVX-sxNFdqCQDD0aHztVkk"
+    ```json
+    {
+        "DID": "did:elsi:VATES-B60645900",
+        "domain_name": "in2.ala",
+        "website": "www.in2.es",
+        "commercial_name": "IN2 Innovating 2gether",
+        "new_privatekey": {
+            "kty": "EC",
+            "crv": "secp256k1",
+            "d": "Dqv3jmu8VNMKXWrHkppr5473sLMzWBczRhzdSdpxDfI",
+            "x": "FTiW0a4r7S2SwjL7AlFlN1yJNWF--4_x3XTTxkFbJ9o",
+            "y": "MmpxbQCOZ0L9U6rLLkD_U8LRGwYEHcoN-DPnEdlpt6A"
+        },
+        "parent_privatekey": {
+            "kty": "EC",
+            "crv": "secp256k1",
+            "d": "Dqv3jmu8VNMKXWrHkppr5473sLMzWBczRhzdSdpxDfI",
+            "x": "NKW_0Fs4iumEegzKoOH0Trwtje1sXsG9Z1949sA8Omo",
+            "y": "g4B3EI0qIdlcXTn-2RpUxgVX-sxNFdqCQDD0aHztVkk"
+        }
     }
-}
-```
+    ```
 
-**Reply**
+    **Reply**
 
-| Name | Type | Description |
-|------|------|-------------|
-| **payload** | json | The DID document associated to the input DID |
+    | Name | Type | Description |
+    |------|------|-------------|
+    | **payload** | json | The DID document associated to the input DID |
 
 
 A more detailed explanation of each field in the request follows:

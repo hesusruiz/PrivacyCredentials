@@ -12,13 +12,10 @@ At the top we have the `citizen's zone`, represented in green.
 In the intermediate level we have the `entities zone`, with the businesses and organistions that manage or process personal data from the citizens, and represented in yellow.
 At the bottom we have the `blockchain zone`. It is red because the fundamental rule for any blockchain application is that personal data never has to be written to the blockchain, even if it is encrypted (encrypted personal data is considered personal data if it is exposed publicly for a sufficiently long period).
 
-We could start discussing about what can be considered personal data, and if a hash of personal data is considered personal data or not. But this is irrelevant here because in this system no personal data is ever written to the blockchain, including any type of hash from personal data.
+There are many discussions about what can be considered personal data, and if a hash of personal data is considered personal data or not. But this is irrelevant here because in this system no personal data is ever written to the blockchain, including any type of hash from personal data.
 
-The information stored in the blockchain is the identities of the juridical persons involved, including the public key that will be used to verify the signatures from the entities issuing certificates.
-The blockchain stores the Trusted List of en
-that the entities issuing certificates 
-Lo que se graba en el Blockchain (que en este caso es la Red T de los socios de Alastria), son las identidades de las personas jurídicas que intervienen, que incluye la clave pública que las entidades emisoras de certificados usarán para firmar digitalmente los certificados en formato Credencial Digital COVID EU. Porque el sistema utiliza el mismo formato de datos, pero lo mejora y simplifica gracias al uso de una red Blockchain.
-Es decir, en el Blockchain se almacena y gestiona la Lista de Entidades Confiables que son las únicas autorizadas a emitir certificados.
+The blockchain is used to register the public information about the identities of the juridical persons involved, including the public key that will be used to verify the signatures from the entities issuing certificates.
+The blockchain stores a decentrally managed Trusted List of entities which are authorised to create and digitally sign certificates of a given type. The Trusted List can be organised by domains, geographical regios or any other criteria that may be adecuate to th euse cases. It is modelled similarly as the Internet DNS system.
 
 ## The flow of a certificate
 
@@ -93,3 +90,16 @@ This is represented in the following diagram.
 When making the validation in the server the verifier mobile has to send the certificate to the server, and this is represented by the new arrow in the diagram. The arrow is red because there is personal data involved. The entity receiving the personal data should comply with all applicable regulations.
 
 From the diagram it is easy to see that the existence of a blockchain network does not have any influence in how personal data should be handled by all actors involved.
+
+## Revocation of certificates
+
+Revocation is normally a very rare event compared to the total number of credentials issued. Actually, in practice in the paper world it is very difficult to implement a real-time verification of paper credentials.
+
+In the digital world, revocation is typically implemented with revocation lists, which are checked in real-time by the verifier application. With centralised technology it is very difficult to implement real-time verification of credentials without leaking information to the server where the revocation list is stored.
+Typically, the revocation list is managed by the same entity that issued the credential, giving the opportunity to this entity to track usage at the individual level of the credentials that were issued, knowing where and when the credential is used.
+
+Managing the revocation list in the blockchain brings several benefits. When the revocation information is inserted in one of the nodes, it is replicated in all the nodes of the network and it is available for verification in all of them. That means that the verifier can securely check in its own node whithout leaking any verification information to any other entity, especifically the issuer of the certificate. In addition, the verifier entity can completely manage the availability of its own node (or nodes), without reliance on the availability of any server operated by a third party.
+
+However, a lot of care should be taken with the information of the certificate that is used in the revocation list, because that information will be permanent in the blockchain. If the revocation identifier is derived in some way from the personal information in the credential (e.g. hashes calculated using information in the credential), then there may be risks of reidentification in the long term, especially for credentials of a very small size and with a small number of fields.
+
+In the PrivacyCredentials system each credential has a **U**niversally **U**nique **ID**entifier version 4 (UUID) as defined in [RFC 4122](https://datatracker.ietf.org/doc/html/rfc4122#section-4.4). This UUID is completely urelated to the rest of the information in the credential and reduces the possibility of many typs of attacks.

@@ -117,96 +117,98 @@ In the first option the client obtains the public key of the Issuer via DID reso
 
 The API for DID resolution is described below:
 
-<div class="apidoc-getbox">
-    <span class="apidoc-get">GET</span>
-    <span class="apidoc-url">/api/did/v1/identifiers/{string:DID}</span>
-</div>
+!!! apidoc "Universal DID resolution"
 
-Resolves a DID and returns the DID Document (JSON format), if it exists.
-It supports four DID methods: **ebsi**, **elsi**, **ala**, **peer**.
+    <div class="apidoc-getbox">
+        <span class="apidoc-get">GET</span>
+        <span class="apidoc-url">/api/did/v1/identifiers/{string:DID}</span>
+    </div>
 
-Only **PEER** and **ELSI** are directly implemented by this API.
-The others are delegated to be resolved by their respective implementations.
+    Resolves a DID and returns the DID Document (JSON format), if it exists.
+    It supports four DID methods: **ebsi**, **elsi**, **ala**, **peer**.
 
-For example, for **EBSI** we call the corresponding Universal Resolver API, currently in testing and available at [https://api.ebsi.xyz/did/v1/identifiers/](https://api.ebsi.xyz/did/v1/identifiers/)
+    Only **PEER** and **ELSI** are directly implemented by this API.
+    The others are delegated to be resolved by their respective implementations.
 
-**Request parameters**
+    For example, for **EBSI** we call the corresponding Universal Resolver API, currently in testing and available at [https://api.ebsi.xyz/did/v1/identifiers/](https://api.ebsi.xyz/did/v1/identifiers/)
 
-| Name | Type | Description | Default |
-|------|------|-------------|---------|
-| **DID** | string | The DID to resolve into a DID Document | None |
+    **Request parameters**
 
-**Reply**
+    | Name | Type | Description | Default |
+    |------|------|-------------|---------|
+    | **DID** | string | The DID to resolve into a DID Document | None |
 
-| Name | Type | Description |
-|------|------|-------------|
-| **payload** | json | The DID document associated to the input DID |
+    **Reply**
 
-**Status codes**
+    | Name | Type | Description |
+    |------|------|-------------|
+    | **payload** | json | The DID document associated to the input DID |
 
-| Code | Meaning |
-|------|---------|
-| **200** | no error |
-| **404** | error resolving the DID |
+    **Status codes**
 
-**Example request**:
+    | Code | Meaning |
+    |------|---------|
+    | **200** | no error |
+    | **404** | error resolving the DID |
 
-```http
-GET /api/did/v1/identifiers/did:elsi:VATES-B60645900 HTTP/1.1
-Host: example.com
-Accept: application/json
-```
+    **Example request**:
 
-**Example response**:
+    ```http
+    GET /api/did/v1/identifiers/did:elsi:VATES-B60645900 HTTP/1.1
+    Host: example.com
+    Accept: application/json
+    ```
 
-```json
-{
-    "payload": {
-        "@context": [
-            "https://www.w3.org/ns/did/v1",
-            "https://w3id.org/security/v1"
-        ],
-        "id": "did:elsi:VATES-B60645900",
-        "verificationMethod": [
-            {
-                "id": "did:elsi:VATES-B60645900#key-verification",
-                "type": "JwsVerificationKey2020",
-                "controller": "did:elsi:VATES-B60645900",
-                "publicKeyJwk": {
-                    "kid": "key-verification",
-                    "kty": "EC",
-                    "crv": "secp256k1",
-                    "x": "3K4iNuzPkcrHlEbhHE8vYXlF6K5xGZ2rdOrn3cQ-LnQ",
-                    "y": "9Z_l_hQLkq6aLuZz8gheq7R_o5ZUHUlxZ3IBGHsdzaA"
+    **Example response**:
+
+    ```json
+    {
+        "payload": {
+            "@context": [
+                "https://www.w3.org/ns/did/v1",
+                "https://w3id.org/security/v1"
+            ],
+            "id": "did:elsi:VATES-B60645900",
+            "verificationMethod": [
+                {
+                    "id": "did:elsi:VATES-B60645900#key-verification",
+                    "type": "JwsVerificationKey2020",
+                    "controller": "did:elsi:VATES-B60645900",
+                    "publicKeyJwk": {
+                        "kid": "key-verification",
+                        "kty": "EC",
+                        "crv": "secp256k1",
+                        "x": "3K4iNuzPkcrHlEbhHE8vYXlF6K5xGZ2rdOrn3cQ-LnQ",
+                        "y": "9Z_l_hQLkq6aLuZz8gheq7R_o5ZUHUlxZ3IBGHsdzaA"
+                    }
                 }
-            }
-        ],
-        "service": [
-            {
-                "id": "did:elsi:VATES-B60645900#info",
-                "type": "EntityCommercialInfo",
-                "serviceEndpoint": "www.in2.es",
-                "name": "IN2 Innovating 2gether"
-            },
-            {
-                "id": "did:elsi:VATES-B60645900#sms",
-                "type": "SecureMessagingService",
-                "serviceEndpoint": "https://privatecred.hesusruiz.org/api"
-            }
-        ],
-        "anchors": [
-            {
-                "id": "redt.alastria",
-                "resolution": "UniversalResolver",
-                "domain": "in2.ala",
-                "ethereumAddress": "0x8CDA8113567e633805e48c87747257E9FFAAdDF5"
-            }
-        ],
-        "created": "2021-02-08T06:53:08Z",
-        "updated": "2021-02-08T06:53:08Z"
+            ],
+            "service": [
+                {
+                    "id": "did:elsi:VATES-B60645900#info",
+                    "type": "EntityCommercialInfo",
+                    "serviceEndpoint": "www.in2.es",
+                    "name": "IN2 Innovating 2gether"
+                },
+                {
+                    "id": "did:elsi:VATES-B60645900#sms",
+                    "type": "SecureMessagingService",
+                    "serviceEndpoint": "https://privatecred.hesusruiz.org/api"
+                }
+            ],
+            "anchors": [
+                {
+                    "id": "redt.alastria",
+                    "resolution": "UniversalResolver",
+                    "domain": "in2.ala",
+                    "ethereumAddress": "0x8CDA8113567e633805e48c87747257E9FFAAdDF5"
+                }
+            ],
+            "created": "2021-02-08T06:53:08Z",
+            "updated": "2021-02-08T06:53:08Z"
+        }
     }
-}
-```
+    ```
 
 ### Delegating verification to a trusted server
 
@@ -214,28 +216,30 @@ In the second option the client delegates to a trusted server the verification o
 
 This is the easiest one to use, but requires a very high level of trust. The API is described below:
 
-<div class="apidoc-postbox">
-    <span class="apidoc-post">POST</span>
-    <span class="apidoc-url">/api/verifiable-credential/v1/verifiable-credential-validations</span>
-</div>
+!!! apidoc "Verification of credential in the server"
 
-Receives a JWT in the JWS Compact Serialization format ([RFC 7519](https://datatracker.ietf.org/doc/html/rfc7519)) as the body of the POST request and the server verifies the credential and credential signature using internally the Universal Resolver API for resolving the DID of the Issuer and checking its digital signature.
+    <div class="apidoc-postbox">
+        <span class="apidoc-post">POST</span>
+        <span class="apidoc-url">/api/verifiable-credential/v1/verifiable-credential-validations</span>
+    </div>
 
-**Request body**
+    Receives a JWT in the JWS Compact Serialization format ([RFC 7519](https://datatracker.ietf.org/doc/html/rfc7519)) as the body of the POST request and the server verifies the credential and credential signature using internally the Universal Resolver API for resolving the DID of the Issuer and checking its digital signature.
 
-| Type | Description | Default |
-|------|------|-------------|
-| json | The credential in JWT format | None |
+    **Request body**
 
-**Reply**
+    | Type | Description | Default |
+    |------|------|-------------|
+    | json | The credential in JWT format | None |
 
-| Name | Type | Description |
-|------|------|-------------|
-| **payload** | json | The JSON object with the verified claims in the JWT |
+    **Reply**
 
-**Status codes**
+    | Name | Type | Description |
+    |------|------|-------------|
+    | **payload** | json | The JSON object with the verified claims in the JWT |
 
-| Code | Meaning |
-|------|---------|
-| **200** | no error |
-| **404** | error resolving the DID |
+    **Status codes**
+
+    | Code | Meaning |
+    |------|---------|
+    | **200** | no error |
+    | **404** | error resolving the DID |

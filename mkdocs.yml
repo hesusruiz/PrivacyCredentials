@@ -11,8 +11,8 @@ theme:
   font: false
 
   features:
-    - header.autohide
     - navigation.sections
+    - navigation.expand
 
 repo_url: https://github.com/hesusruiz/PrivacyCredentials
 
@@ -39,6 +39,7 @@ nav:
       - Introduction: 'index.md'
       - Architecture:
         - Overview: architecture/ar-overview.md
+        - Relationship with EU COVID: architecture/relationship-with-eucovid.md
       - DID Methods:
           - ELSI: 'didmethods/elsi.md'
       - Credentials:
