@@ -12,7 +12,7 @@ repo_url: https://github.com/hesusruiz/PrivacyCredentials
 edit_uri: ""
 
 # Copyright
-copyright: Copyright &copy; 2016 - 2021
+copyright: Copyright &copy; 2021
 
 
 theme:
@@ -22,7 +22,7 @@ theme:
     primary: indigo
     accent: indigo
   logo: assets/logo.png
-  font: false
+#  font: false
 
   features:
     - navigation.sections
