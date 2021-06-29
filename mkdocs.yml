@@ -29,22 +29,37 @@ plugins:
   - img2fig
   - render_swagger
   - kroki:
+  - print-site:
+      add_to_navigation: true
+      print_page_title: 'Print Site'
+      # Table of contents
+      add_table_of_contents: true
+      toc_title: 'Table of Contents'
+      toc_depth: 6
+      # Content-related
+      add_full_urls: false
+      enumerate_headings: true
+      enumerate_figures: true
+      add_cover_page: true
+      cover_page_template: ""
+      path_to_pdf: ""
+      exclude:
+
 
 extra_css:
   - stylesheets/extra.css
 
 
 nav:
-    - Home:
-      - Introduction: 'index.md'
-      - Architecture:
-        - Overview: architecture/ar-overview.md
-        - Relationship with EU COVID: architecture/relationship-with-eucovid.md
-      - DID Methods:
-          - ELSI: 'didmethods/elsi.md'
-      - Credentials:
-          - EU COVID: 'credentials/eu-covid.md'
-          - W3C VC: 'credentials/w3c.md'
-      - Trust Framework:
-          - Overview: trustframework/tf-overview.md
-          - Smart Contracts: trustframework/smart-contracts.md
+    - Introduction: 'index.md'
+    - Architecture:
+      - Overview: architecture/ar-overview.md
+      - Relationship with EU COVID: architecture/relationship-with-eucovid.md
+    - DID Methods:
+        - ELSI: 'didmethods/elsi.md'
+    - Credentials:
+        - EU COVID: 'credentials/eu-covid.md'
+        - W3C VC: 'credentials/w3c.md'
+    - Trust Framework:
+        - Overview: trustframework/tf-overview.md
+        - Smart Contracts: trustframework/smart-contracts.md
