@@ -1,5 +1,19 @@
+
+# Project information
 site_name: PrivacyCredentials
-site_url: https://example.com/
+site_url: https://hesusruiz.github.io/PrivacyCredentials/
+site_author: Jesus Ruiz
+site_description: >-
+  PrivacyCredentials is a generic credential system which is designed to be secure, privacy-preserving, scalable, performant and robust. It is designed specifically for some important use cases where physical, on-person verification of identity of holder is needed and where normal W3C Verifiable Credential flows are not fully suitable as they are normally designed currently.
+
+# Repository
+repo_name: hesusruiz/PrivacyCredentials
+repo_url: https://github.com/hesusruiz/PrivacyCredentials
+edit_uri: ""
+
+# Copyright
+copyright: Copyright &copy; 2016 - 2021
+
 
 theme:
   name: material
@@ -14,7 +28,6 @@ theme:
     - navigation.sections
     - navigation.expand
 
-repo_url: https://github.com/hesusruiz/PrivacyCredentials
 
 
 markdown_extensions:
