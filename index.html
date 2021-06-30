@@ -76,6 +76,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#introduction" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -211,6 +216,8 @@
       
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
+      
+        
       
       
       <a href="." class="md-nav__link md-nav__link--active">
@@ -499,17 +506,35 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
                 
-                  <h1>Introduction</h1>
-                
-                <p><strong>PrivacyCredentials</strong> is a generic credential system which is designed to be secure, privacy-preserving, scalable, performant and robust. It is designed specifically for some important use cases where physical, on-person verification of identity of holder is needed and where normal W3C Verifiable Credential flows are not fully suitable as they are normally designed currently.</p>
+                <h1 id="introduction">Introduction</h1>
+<p><strong>PrivacyCredentials</strong> is a generic credential system which is designed to be secure, privacy-preserving, scalable, performant and robust. It is designed specifically for some important use cases where physical, on-person verification of identity of holder is needed and where normal W3C Verifiable Credential flows are not fully suitable as they are normally designed currently.</p>
 <p>The system is designed to support credentials in different formats, initially the <a href="https://www.w3.org/TR/vc-data-model/">W3C Verifiable Credential</a> format and the <strong>HCERT</strong> format used in the <a href="https://ec.europa.eu/info/live-work-travel-eu/coronavirus-response/safe-covid-19-vaccines-europeans/eu-digital-covid-certificate_en">EU Digital COVID Certificate</a> system for health certificates in the EU.</p>
 <p>It enables production implementations today, because it is designed to be compatible with all current regulations in place today in the European Union (and many other regions of the world).</p>
+<p>This document describes the overall architecture of the system, including the credential formats, interaction among the actor involved and the Trust Framework which it implements.</p>
+<p>Special focus is put on privacy of personal data in real-life scenarios like health-related credentials.</p>
                 
               
               
