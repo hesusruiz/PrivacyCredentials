@@ -1,10 +1,10 @@
-# Relationship with EU Digital COVID Certificate
+# Overview
 
-We could say that PrivacyCredentials is a blockchain-based implementation of the EU Digital COVID Certificates (EUDCC) specification.
+The standard EU Digital COVID Credential system (HCERT) is not based on blockchain (at least for the moment).
 
-The meaning of this sentence is multiple.
+The PrivacyCredentials system includes a blockchain-based implementation of the EU Digital COVID Certificates (EUDCC) specification called HCERTX which is an extension interoperable with the HCERT specification
 
-On one hand, it means that the system is interoperable with the EU Digital COVID Certificates:
+The meaning of the above sentence is multiple. On the one hand, it means that the system is interoperable with the EU Digital COVID Certificates:
 
 - The PrivacyCredentials wallet can scan and store any EUDCC QR code, and can coexist with credentials in other formats (e.g., W3C VC).
 - The wallet can display the human-readable information of a stored EUDCC, including its QR code in EUDCC format so it can be verified by any compatible verifier.
@@ -18,9 +18,9 @@ But usage of EUDCC goes beyond the above:
 
 ## Relationship with EU Digital COVID Certificates
 
-To better describe the system, the next section compares it with the "standard" EUDCC system. We use the information from the eHealth Network in the document [Interoperability of health certificates Trust framework](https://ec.europa.eu/health/sites/health/files/ehealth/docs/trust-framework_interoperability_certificates_en.pdf), describing its characteristics and the differences.
+To better describe the system, this scetion compares HCERTX with the "standard" EUDCC system. We use the information from the eHealth Network in the document [Interoperability of health certificates Trust framework](https://ec.europa.eu/health/sites/health/files/ehealth/docs/trust-framework_interoperability_certificates_en.pdf), describing its characteristics and the differences.
 
-For the explanation of how PrivacyCred can complement and improve the proposed eHealth Network system, first we need to draw the proposed Trust Framework in a different but completely equivalent way, in the following figure.
+For the explanation of how PrivacyCred can complement and improve the proposed eHealth Network system, first we need to draw the proposed eHealth Trust Framework in a different but completely equivalent way, in the following figure.
 
 ![EU PKD system](ehealth_PKD.png)
 
@@ -62,6 +62,7 @@ For example, the current ICAO PKD service is hosted in identical systems within 
 
 ### Summary
 
+
 A blockchain-based system could provide several benefits, including:
 
 * Greater resiliency by replicating in a simple and secure way the Master Lists and associated data.
@@ -69,4 +70,3 @@ A blockchain-based system could provide several benefits, including:
 * Better scalability, as most of the operations in the PKD system are reads (for verifications). Using a blockchain the data is hyper-replicated in a tamper-resistant way in all the nodes of the network, and the verifications can be done to servers which are very close to the geographical location of the verifier.
 
 * An alternative method to the current download method for users of the PKD data. It is enough to operate a node in the blockchain network and the data is updated automatically when the central PKD repository is updated (assuming the update process includes updating the data in the blockchain). Nobody can tamper with the data and the history of the previous versions of the Master Lists are available if needed.
-

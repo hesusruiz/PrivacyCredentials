@@ -12,11 +12,12 @@ repo_url: https://github.com/hesusruiz/PrivacyCredentials
 edit_uri: ""
 
 # Copyright
-copyright: Copyright &copy; 2021
+copyright: ''
 
 
 theme:
   name: material
+  custom_dir: overrides
   palette:
     scheme: normal
     primary: indigo
@@ -28,7 +29,7 @@ theme:
     - navigation.sections
     - navigation.expand
 
-
+use_directory_urls: false
 
 markdown_extensions:
   - def_list
@@ -36,6 +37,8 @@ markdown_extensions:
   - pymdownx.superfences
   - attr_list
   - admonition
+  - toc
+
 
 plugins:
   - search
@@ -44,7 +47,7 @@ plugins:
   - kroki:
   - print-site:
       add_to_navigation: true
-      print_page_title: 'Print Site'
+      print_page_title: 'Print'
       # Table of contents
       add_table_of_contents: true
       toc_title: 'Table of Contents'
@@ -64,15 +67,23 @@ extra_css:
 
 
 nav:
-    - Introduction: 'index.md'
-    - Architecture:
-      - Overview: architecture/ar-overview.md
-      - Relationship with EU COVID: architecture/relationship-with-eucovid.md
-    - DID Methods:
-        - ELSI: 'didmethods/elsi.md'
-    - Credentials:
-        - EU COVID: 'credentials/eu-covid.md'
-        - W3C VC: 'credentials/w3c.md'
+    - Abstract: 'index.md'
+    - Inroduction:
+      - Features: 'features/features.md'
+      - Architecture: 'architecture/privacy-architecture.md'
+    - HCERTX:
+      - Overview: 'hcertx/overview.md'
+      - EU DCC container: 'hcertx/containerformat.md'
+      - EU DCC v1 data model: 'hcertx/datamodel.md'
+      - Trusted Lists: 'hcertx/trustedlists.md'
+      - Security: 'hcertx/security-considerations.md'
+    - W3C Credentials:
+      - Data model: 'credentials/w3c.md'
     - Trust Framework:
-        - Overview: trustframework/tf-overview.md
-        - Smart Contracts: trustframework/smart-contracts.md
+      - Overview: 'trustframework/tf-overview.md'
+      - Smart Contracts: 'trustframework/smart-contracts.md'
+    - DID Methods:
+      - ELSI: 'didmethods/elsi.md'
+    - Interoperability:
+      - with EUDCC: 'interoperability/interoperability-eudcc.md'
+      - with W3C: 'interoperability/interoperability-w3c.md'

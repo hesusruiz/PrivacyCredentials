@@ -123,44 +123,44 @@ The API for DID resolution is described below:
         <span class="apidoc-get">GET</span>
         <span class="apidoc-url">/api/did/v1/identifiers/{string:DID}</span>
     </div>
-
+    
     Resolves a DID and returns the DID Document (JSON format), if it exists.
     It supports four DID methods: **ebsi**, **elsi**, **ala**, **peer**.
-
+    
     Only **PEER** and **ELSI** are directly implemented by this API.
     The others are delegated to be resolved by their respective implementations.
-
+    
     For example, for **EBSI** we call the corresponding Universal Resolver API, currently in testing and available at [https://api.ebsi.xyz/did/v1/identifiers/](https://api.ebsi.xyz/did/v1/identifiers/)
-
+    
     **Request parameters**
-
+    
     | Name | Type | Description | Default |
     |------|------|-------------|---------|
     | **DID** | string | The DID to resolve into a DID Document | None |
-
+    
     **Reply**
-
+    
     | Name | Type | Description |
     |------|------|-------------|
     | **payload** | json | The DID document associated to the input DID |
-
+    
     **Status codes**
-
+    
     | Code | Meaning |
     |------|---------|
     | **200** | no error |
     | **404** | error resolving the DID |
-
+    
     **Example request**:
-
+    
     ```http
     GET /api/did/v1/identifiers/did:elsi:VATES-B60645900 HTTP/1.1
     Host: example.com
     Accept: application/json
     ```
-
+    
     **Example response**:
-
+    
     ```json
     {
         "payload": {
@@ -212,7 +212,7 @@ The API for DID resolution is described below:
 
 ### Delegating verification to a trusted server
 
-In the second option the client delegates to a trusted server the verification of the credential, simplifying the code and complexity of secure cryptographic operatios to the server. This option maybe used when the client trusts the server as it happens when they are operated by the same entity. It can be also used when the server is operated by a public administration and the citizen trusts on it.
+In the second option the client delegates to a trusted server the verification of the credential, simplifying the code and complexity of secure cryptographic operations to the server. This option maybe used when the client trusts the server as it happens when they are operated by the same entity. It can be also used when the server is operated by a public administration and the citizen trusts on it.
 
 This is the easiest one to use, but requires a very high level of trust. The API is described below:
 
@@ -222,23 +222,23 @@ This is the easiest one to use, but requires a very high level of trust. The API
         <span class="apidoc-post">POST</span>
         <span class="apidoc-url">/api/verifiable-credential/v1/verifiable-credential-validations</span>
     </div>
-
+    
     Receives a JWT in the JWS Compact Serialization format ([RFC 7519](https://datatracker.ietf.org/doc/html/rfc7519)) as the body of the POST request and the server verifies the credential and credential signature using internally the Universal Resolver API for resolving the DID of the Issuer and checking its digital signature.
-
+    
     **Request body**
-
+    
     | Type | Description | Default |
     |------|------|-------------|
     | json | The credential in JWT format | None |
-
+    
     **Reply**
-
+    
     | Name | Type | Description |
     |------|------|-------------|
     | **payload** | json | The JSON object with the verified claims in the JWT |
-
+    
     **Status codes**
-
+    
     | Code | Meaning |
     |------|---------|
     | **200** | no error |

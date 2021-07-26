@@ -39,18 +39,25 @@ Using both `VAT` and `LEI` in creating the DID covers every juridical person tha
 
 The ELSI DID Method refers only to legal persons, so we are using the `id-etsi-qcs-SemanticsId-Legal` definition described in Section 5.1 of ETSI EN 319 412-1.
 
-Creating a DID is extremely simple and fully decentralized (does not require participation of any central authority), assuming that the legal person already exists. Its definition using ABNF syntax is:
+Creating a DID is extremely simple and fully decentralized (does not require participation of any central authority), assuming that the legal person already exists (which is a prerequisite for doing anything useful). Its definition using ABNF syntax is:
 
 ```python
     did = "did:elsi:" id-etsi-qcs-SemanticsId-Legal
 ```
 
-Which is the concatenation of the prefix `did:elsi:` with the legal person identifier defined in ETSI EN 319 412-1. For the full syntax, please refer to the standards document, but for the two most common basic identifiers (VAT and LEI) the identifier is composed of:
+Which is the concatenation of the prefix `did:elsi:` with the legal person identifier defined in [ETSI EN 319 412-1](https://www.etsi.org/deliver/etsi_en/319400_319499/31941201/01.04.02_20/en_31941201v010402a.pdf). Tthe identifier has the following structure, in this order:
 
-- 3 character legal person identity type reference, like `VAT` for identification based on a national value added tax identification number or `LEI` for the [Legal Entity Identifier](https://www.gleif.org).
-- 2 character ISO 3166 [2] country code;
-- hyphen-minus "-" (0x2D (ASCII), U+002D (UTF-8)); and
+- 3 character legal person identity type reference; 
+- 2 character [ISO 3166](https://www.iso.org/standard/72482.html) country code; 
+- hyphen-minus "-" (0x2D (ASCII), U+002D (UTF-8)); and 
 - identifier (according to country and identity type reference).
+
+The three initial characters (identity type reference) shall have one of the following defined values for the two most common basic identifiers (`VAT` and `LEI`): 
+
+1. `VAT` for identification based on a national value added tax identification number. 
+2. `LEI` for a [global Legal Entity Identifier](https://www.gleif.org) as specified in [ISO 17442](https://www.iso.org/standard/78829.html). The 2 character [ISO 3166](https://www.iso.org/standard/72482.html) country code shall be set to `XG`.
+
+The system supports also identification based on national authorization number of a payment service provider under [Payments Services Directive (EU) 2015/2366](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32015L2366) (`PSD`), identifiers from a national trade register (`NTR`), or other national scheme that is considered appropriate for national and European level. For the full syntax, please refer to the standards document. However, it is expected that the need for these identifiers is very low and that the two identifiers described above should be enough for the immense majority of use cases.
 
 Some examples of DIDs are the following:
 
